@@ -12,4 +12,8 @@ public class Product {
         this.Quantity = Quantity;
         this.Price = Price;
     }
+
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
+    }
 }
