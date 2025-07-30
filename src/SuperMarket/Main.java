@@ -1,6 +1,5 @@
 package SuperMarket;
 
-import java.beans.Customizer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -51,6 +50,7 @@ public class Main {
 
         users.add(new User(email,password,role,credit));
     }
+
     public static boolean login(){
         sc.nextLine();
         System.out.print("Enter email : ");
@@ -149,7 +149,11 @@ public class Main {
 
     public static void viewAllProduct(){
         for(Product u : products){
-            System.out.println(u.Id + " || " + u.Name +" || "+ u.Quantity +" || "+ u.Price);
+            System.out.println("Product ID : " + u.Id);
+            System.out.println("Product Name : " + u.Name);
+            System.out.println("Product Quantity : " + u.Quantity);
+            System.out.println("Product Price : " + u.Price);
+            System.out.println("------------------------------");
         }
     }
 
@@ -175,8 +179,13 @@ public class Main {
     }
 
     public static void viewCart(){
+        System.out.println("Cart : ");
         for (Cart c : carts){
-            System.out.println(c.Id + " || " + c.name +" || "+ c.quantity +" || "+ c.price);
+            System.out.println("Product ID : " + c.Id);
+            System.out.println("Product Name : " + c.name);
+            System.out.println("Product Quantity : " + c.quantity);
+            System.out.println("Product Price : " + c.price);
+            System.out.println("------------------------------");
         }
     }
 
@@ -202,15 +211,17 @@ public class Main {
         }
         else{
             u.setCredit(u.credit - totalPrice);
-            System.out.println("Chect out Successful : " + totalPrice);
+            System.out.println("Check out Successful : " + totalPrice);
             System.out.println("Balance credit : " + u.credit);
         }
     }
 
     public static void viewCustomer(){
+        System.out.println("User List : ");
         for(User u : users){
             if(u.role.equalsIgnoreCase("customer")){
-                System.out.println(u.email + " || " + u.credit);
+                System.out.println("Email : " + u.email);
+                System.out.println("Credit : " + u.credit);
             }
         }
     }
